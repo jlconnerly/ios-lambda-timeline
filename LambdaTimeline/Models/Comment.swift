@@ -41,4 +41,9 @@ class Comment: FirebaseConvertible, Equatable {
                 Comment.author: author.dictionaryRepresentation,
                 Comment.timestampKey: timestamp.timeIntervalSince1970]
     }
+    
+    static func ==(lhs: Comment, rhs: Comment) -> Bool {
+        return lhs.author == rhs.author &&
+            lhs.timestamp == rhs.timestamp
+    }
 }
