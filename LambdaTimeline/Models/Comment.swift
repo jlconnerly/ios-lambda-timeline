@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-struct Comment: FirebaseConvertible, Equatable {
+class Comment: FirebaseConvertible, Equatable {
     
     static private let textKey = "text"
     static private let author = "author"
