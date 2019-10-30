@@ -70,5 +70,10 @@ class AddFiltersViewController: UIViewController {
     @IBAction func blurSliderDidChangeValue(_ sender: UISlider) {
         updateImage()
     }
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        guard let image = imageView.image else { return }
+        NotificationCenter.default.post(name: .doneApplyingFilters, object: self, userInfo: ["image": image])
+    }
     
 }

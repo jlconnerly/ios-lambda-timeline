@@ -27,13 +27,18 @@ class ImagePostViewController: ShiftableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setImageViewHeight(with: 1.0)
-        
         updateViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateWithFilteredImage(from:)), name: .doneApplyingFilters, object: nil)
     }
     
     // MARK: - IBActions & Methods
+    
+    @objc func updateWithFilteredImage(from notification: NSNotification) {
+        guard let image = notification.userInfo?["image"] as? UIImage else { return }
+        imageView.image = image
+        
+    }
     
     func updateViews() {
         
