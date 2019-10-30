@@ -13,15 +13,15 @@ class ImagePostViewController: ShiftableViewController {
     
     // MARK: - IBOutlets & Properties
     
-    var postController: PostController!
-    var post: Post?
-    var imageData: Data?
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var chooseImageButton: UIButton!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var postButton: UIBarButtonItem!
+    
+    var postController: PostController!
+    var post: Post?
+    var imageData: Data?
     
     // MARK: - View LifeCycle
     
@@ -127,6 +127,14 @@ class ImagePostViewController: ShiftableViewController {
         
         view.layoutSubviews()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addFilterSegue" {
+            guard let filterVC = segue.destination as? AddFiltersViewController else { return }
+            let image = imageView.image
+            filterVC.image = image
+        }
+    }
 
 }
 
@@ -144,7 +152,7 @@ extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigation
         
         imageView.image = image
         
-        setImageViewHeight(with: image.ratio)
+        //setImageViewHeight(with: image.ratio)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
