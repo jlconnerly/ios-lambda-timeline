@@ -11,6 +11,20 @@ import Photos
 
 class ImagePostViewController: ShiftableViewController {
     
+    // MARK: - IBOutlets & Properties
+    
+    var postController: PostController!
+    var post: Post?
+    var imageData: Data?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var chooseImageButton: UIButton!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var postButton: UIBarButtonItem!
+    
+    // MARK: - View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +32,8 @@ class ImagePostViewController: ShiftableViewController {
         
         updateViews()
     }
+    
+    // MARK: - IBActions & Methods
     
     func updateViews() {
         
@@ -111,17 +127,10 @@ class ImagePostViewController: ShiftableViewController {
         
         view.layoutSubviews()
     }
-    
-    var postController: PostController!
-    var post: Post?
-    var imageData: Data?
-    
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var chooseImageButton: UIButton!
-    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var postButton: UIBarButtonItem!
+
 }
+
+// MARK: - Extensions
 
 extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
