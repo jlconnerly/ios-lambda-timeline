@@ -11,12 +11,16 @@ import CoreImage
 
 class AddFiltersViewController: UIViewController {
     
+    // MARK: - IBOutlets & Properties
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var blurSlider: UISlider!
+    @IBOutlet weak var sepiaSlider: UISlider!
     
     private let context = CIContext(options: nil)
     
-    private let filter = CIFilter(name: "CIBoxBlur")!
+    private let blurFilter = CIFilter(name: "CIBoxBlur")!
+    private let sepiaFilter = CIFilter(name: "CISepiaTone")!
     
     var image: UIImage?
     
@@ -40,23 +44,32 @@ class AddFiltersViewController: UIViewController {
         }
     }
 
+    // MARK: - View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         originalImage = image
     }
     
+    // MARK: - IBActions & Methods
+    
     private func filterImage(image: UIImage) -> UIImage? {
         guard let cgImage = image.cgImage else { return nil }
         let ciImage = CIImage(cgImage: cgImage)
         
-        filter.setValue(ciImage, forKey: "inputImage")
-        filter.setValue(blurSlider.value, forKey: "inputRadius")
+        blurFilter.setValue(ciImage, forKey: "inputImage")
+        blurFilter.setValue(blurSlider.value, forKey: "inputRadius")
         
-        guard let outputCIImage = filter.outputImage else { return nil }
+        guard let outputCIImageWithBlur = blurFilter.outputImage else { return nil }
+        
+        sepiaFilter.setValue(outputCIImageWithBlur, forKey: "inputImage")
+        sepiaFilter.setValue(sepiaSlider.value, forKey: "inputIntensity")
+        
+        guard let outputCIImageWithSepia = sepiaFilter.outputImage else { return nil }
         
         // render the image
-        guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: CGPoint.zero, size: image.size)) else { return nil }
+        guard let outputCGImage = context.createCGImage(outputCIImageWithSepia, from: CGRect(origin: CGPoint.zero, size: image.size)) else { return nil }
         
         return UIImage(cgImage: outputCGImage)
     }
@@ -70,10 +83,16 @@ class AddFiltersViewController: UIViewController {
     @IBAction func blurSliderDidChangeValue(_ sender: UISlider) {
         updateImage()
     }
+    
+    @IBAction func sepiaSliderDidChangeValue(_ sender: UISlider) {
+        updateImage()
+    }
+    
+    
+    
     @IBAction func doneButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         guard let image = imageView.image else { return }
         NotificationCenter.default.post(name: .doneApplyingFilters, object: self, userInfo: ["image": image])
     }
-    
 }
