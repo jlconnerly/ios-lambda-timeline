@@ -18,6 +18,7 @@ class Comment: FirebaseConvertible, Equatable {
     let text: String
     let author: Author
     let timestamp: Date
+    let commentType: CommentType = .text
     
     init(text: String, author: Author, timestamp: Date = Date()) {
         self.text = text

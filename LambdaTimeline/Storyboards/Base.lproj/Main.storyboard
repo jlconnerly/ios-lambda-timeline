@@ -500,6 +500,48 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioCell" rowHeight="54" id="iqr-gy-Qcc" customClass="AudioCommentTableViewCell" customModule="LambdaTimeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="188.5" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iqr-gy-Qcc" id="Mnn-aK-qrU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h8C-ZG-E3z">
+                                            <rect key="frame" x="16" y="16" width="343" height="22"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-Jk-blu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="b7a-kE-UZp"/>
+                                                        <constraint firstAttribute="height" constant="22" id="cpx-bG-kSG"/>
+                                                    </constraints>
+                                                    <state key="normal" image="play.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="playStopButtonPressed:" destination="iqr-gy-Qcc" eventType="touchUpInside" id="Dwf-LC-27M"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-Xv-7Ob">
+                                                    <rect key="frame" x="35" y="0.0" width="308" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="h8C-ZG-E3z" secondAttribute="trailing" id="PPx-Ut-L3R"/>
+                                        <constraint firstItem="h8C-ZG-E3z" firstAttribute="leading" secondItem="Mnn-aK-qrU" secondAttribute="leadingMargin" id="eZc-xu-pz7"/>
+                                        <constraint firstItem="h8C-ZG-E3z" firstAttribute="top" secondItem="Mnn-aK-qrU" secondAttribute="topMargin" constant="5" id="lzJ-p6-ty2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="h8C-ZG-E3z" secondAttribute="bottom" constant="5" id="mmH-Aj-XLz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="jsh-Xv-7Ob" id="I5H-ot-uq4"/>
+                                    <outlet property="playStopButton" destination="hWu-Jk-blu" id="PbG-4m-LIb"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="OyM-8q-Icp" id="hEW-Hv-MJ8"/>
@@ -523,7 +565,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdL-Y3-4ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="494"/>
+            <point key="canvasLocation" x="1968.8" y="493.40329835082463"/>
         </scene>
         <!--Record Comment View Controller-->
         <scene sceneID="0zy-Ci-Eja">
@@ -610,4 +652,7 @@
             <point key="canvasLocation" x="2868" y="493.40329835082463"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+    </resources>
 </document>

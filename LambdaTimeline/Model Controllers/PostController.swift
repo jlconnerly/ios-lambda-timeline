@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class PostController {
     
+    var commentType: CommentType?
+    
     func createPost(with title: String, ofType mediaType: MediaType, mediaData: Data, ratio: CGFloat? = nil, completion: @escaping (Bool) -> Void = { _ in }) {
         
         guard let currentUser = Auth.auth().currentUser,
@@ -43,6 +45,9 @@ class PostController {
         let comment = Comment(text: text, author: author)
         post.comments.append(comment)
         
+        commentType = .text
+        NotificationCenter.default.post(name: .commentMade, object: self, userInfo: ["commentType": commentType!])
+        
         savePostToFirebase(post)
     }
     
@@ -50,8 +55,12 @@ class PostController {
         guard let currentUser = Auth.auth().currentUser,
             let author = Author(user: currentUser) else { return }
         
-        let audioComment = AudioComment(audioURL: URL, author: author)
+        let urlString = "\(URL)"
+        let audioComment = AudioComment(audioURL: urlString, author: author)
         post.audioComments.append(audioComment)
+        
+        commentType = .audio
+        NotificationCenter.default.post(name: .commentMade, object: self, userInfo: ["commentType": commentType!])
         
         savePostToFirebase(post)
     }

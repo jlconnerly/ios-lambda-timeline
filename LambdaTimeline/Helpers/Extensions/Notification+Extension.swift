@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static var doneApplyingFilters = Notification.Name("doneApplyingFilters")
+    static var commentMade = Notification.Name("commentMade")
 }

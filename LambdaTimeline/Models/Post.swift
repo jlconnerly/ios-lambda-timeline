@@ -15,7 +15,7 @@ enum MediaType: String {
 
 class Post {
     
-    init(title: String, audioURL: URL? = nil, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date()) {
+    init(title: String, audioURL: String? = nil, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date()) {
         self.mediaURL = mediaURL
         self.ratio = ratio
         self.mediaType = .image

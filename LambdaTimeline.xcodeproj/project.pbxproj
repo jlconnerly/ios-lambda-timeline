@@ -12,6 +12,7 @@
 		321768EE236AA6A500509E74 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768ED236AA6A500509E74 /* Recorder.swift */; };
 		321768F0236AA80C00509E74 /* AudioComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768EF236AA80C00509E74 /* AudioComment.swift */; };
 		321768F2236AC69C00509E74 /* piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321768F1236AC69C00509E74 /* piano.mp3 */; };
+		321768F4236ACF5200509E74 /* AudioCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768F3236ACF5200509E74 /* AudioCommentTableViewCell.swift */; };
 		32C9EA272368EB3E001FF7DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */; };
 		32C9EA292369109F001FF7DA /* AddFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */; };
 		32C9EA2B23691895001FF7DA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA2A23691895001FF7DA /* Notification+Extension.swift */; };
@@ -46,6 +47,7 @@
 		321768ED236AA6A500509E74 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		321768EF236AA80C00509E74 /* AudioComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComment.swift; sourceTree = "<group>"; };
 		321768F1236AC69C00509E74 /* piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano.mp3; sourceTree = "<group>"; };
+		321768F3236ACF5200509E74 /* AudioCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentTableViewCell.swift; sourceTree = "<group>"; };
 		32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersViewController.swift; sourceTree = "<group>"; };
 		32C9EA2A23691895001FF7DA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				46CFE7022171572600E7FF73 /* ImagePostCollectionViewCell.swift */,
+				321768F3236ACF5200509E74 /* AudioCommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				46A0366A21700F5100E7FF73 /* PostsCollectionViewController.swift in Sources */,
 				46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */,
 				46463792216FFDD900E7FF73 /* Comment.swift in Sources */,
+				321768F4236ACF5200509E74 /* AudioCommentTableViewCell.swift in Sources */,
 				46CFE6F721707FA600E7FF73 /* UIViewController+InformationalAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum CommentType: String {
+    case text
+    case audio
+}
+
 class RecordCommentViewController: UIViewController {
 
     @IBOutlet weak var recordCommentButton: UIButton!
@@ -17,6 +22,9 @@ class RecordCommentViewController: UIViewController {
     
     var player: Player = Player(url: nil)
     var recorder: Recorder = Recorder()
+    var postController: PostController?
+    var post: Post?
+    var commentType: CommentType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +71,10 @@ class RecordCommentViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        guard let url = recorder.url,
+              let postController = postController else { return }
+        postController.addAudioComment(from: url, to: &(post)!)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
