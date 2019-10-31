@@ -567,6 +567,9 @@
                                         <rect key="frame" x="170" y="205" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="gjZ-Ew-n4P" eventType="touchUpInside" id="tkJ-E4-F9t"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -598,6 +601,7 @@
                     <connections>
                         <outlet property="playButton" destination="Ehf-KY-gIz" id="lgi-4J-Ppg"/>
                         <outlet property="recordCommentButton" destination="m8D-R5-wrk" id="cZE-Wg-HEk"/>
+                        <outlet property="saveButton" destination="VXk-83-avM" id="Ml1-ae-8dd"/>
                         <outlet property="timeSlider" destination="pke-9m-vjX" id="uaf-8L-9Vh"/>
                     </connections>
                 </viewController>

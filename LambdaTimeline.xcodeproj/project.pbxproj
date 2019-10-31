@@ -11,6 +11,7 @@
 		321768EC236AA58300509E74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768EB236AA58300509E74 /* Player.swift */; };
 		321768EE236AA6A500509E74 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768ED236AA6A500509E74 /* Recorder.swift */; };
 		321768F0236AA80C00509E74 /* AudioComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768EF236AA80C00509E74 /* AudioComment.swift */; };
+		321768F2236AC69C00509E74 /* piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 321768F1236AC69C00509E74 /* piano.mp3 */; };
 		32C9EA272368EB3E001FF7DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */; };
 		32C9EA292369109F001FF7DA /* AddFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */; };
 		32C9EA2B23691895001FF7DA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA2A23691895001FF7DA /* Notification+Extension.swift */; };
@@ -44,6 +45,7 @@
 		321768EB236AA58300509E74 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		321768ED236AA6A500509E74 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		321768EF236AA80C00509E74 /* AudioComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComment.swift; sourceTree = "<group>"; };
+		321768F1236AC69C00509E74 /* piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano.mp3; sourceTree = "<group>"; };
 		32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersViewController.swift; sourceTree = "<group>"; };
 		32C9EA2A23691895001FF7DA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				46463782216FDE4C00E7FF73 /* Assets.xcassets */,
 				46463787216FDE4C00E7FF73 /* Info.plist */,
 				32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */,
+				321768F1236AC69C00509E74 /* piano.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				32C9EA272368EB3E001FF7DA /* GoogleService-Info.plist in Resources */,
 				46463786216FDE4C00E7FF73 /* LaunchScreen.storyboard in Resources */,
+				321768F2236AC69C00509E74 /* piano.mp3 in Resources */,
 				46463783216FDE4C00E7FF73 /* Assets.xcassets in Resources */,
 				46463781216FDE4B00E7FF73 /* Main.storyboard in Resources */,
 			);

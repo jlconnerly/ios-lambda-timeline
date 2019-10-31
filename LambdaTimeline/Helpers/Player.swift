@@ -32,7 +32,18 @@ class Player: NSObject {
         duration - timeElapsed
     }
     
-    override init() {
+    init(url: URL?) {
+        self.url = url
+        
+        // create an audio player
+        do {
+            if let url = url {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+            }
+        } catch {
+            print("AudioPlayer Error: \(url)")
+        }
+        
         super.init()
         audioPlayer?.delegate = self
     }
