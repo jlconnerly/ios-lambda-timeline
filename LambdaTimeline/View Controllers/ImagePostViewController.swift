@@ -140,7 +140,6 @@ class ImagePostViewController: ShiftableViewController {
             filterVC.image = image
         }
     }
-
 }
 
 // MARK: - Extensions
@@ -156,8 +155,6 @@ extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigation
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         
         imageView.image = image
-        
-        //setImageViewHeight(with: image.ratio)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
