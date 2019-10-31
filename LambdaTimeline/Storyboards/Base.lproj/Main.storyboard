@@ -539,10 +539,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-R5-wrk">
                                         <rect key="frame" x="127" y="66" width="120" height="30"/>
                                         <state key="normal" title="Record Comment"/>
+                                        <connections>
+                                            <action selector="recordButtonPressed:" destination="gjZ-Ew-n4P" eventType="touchUpInside" id="8ns-ua-Fzq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-KY-gIz">
                                         <rect key="frame" x="172" y="104" width="30" height="30"/>
                                         <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="gjZ-Ew-n4P" eventType="touchUpInside" id="hfk-2h-QMc"/>
+                                        </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pke-9m-vjX">
                                         <rect key="frame" x="6" y="151" width="363" height="31"/>
@@ -556,6 +562,11 @@
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="gjZ-Ew-n4P" eventType="touchUpInside" id="0Eq-Kz-1eO"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXk-83-avM">
+                                        <rect key="frame" x="170" y="205" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -584,6 +595,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3gV-T8-FJE"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="Ehf-KY-gIz" id="lgi-4J-Ppg"/>
+                        <outlet property="recordCommentButton" destination="m8D-R5-wrk" id="cZE-Wg-HEk"/>
+                        <outlet property="timeSlider" destination="pke-9m-vjX" id="uaf-8L-9Vh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5w6-E1-qne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

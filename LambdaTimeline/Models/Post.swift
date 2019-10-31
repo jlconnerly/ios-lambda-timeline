@@ -15,12 +15,13 @@ enum MediaType: String {
 
 class Post {
     
-    init(title: String, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date()) {
+    init(title: String, audioURL: URL? = nil, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date()) {
         self.mediaURL = mediaURL
         self.ratio = ratio
         self.mediaType = .image
         self.author = author
         self.comments = [Comment(text: title, author: author)]
+        self.audioComments = [AudioComment(audioURL: audioURL, author: author)]
         self.timestamp = timestamp
     }
     
@@ -32,7 +33,8 @@ class Post {
             let authorDictionary = dictionary[Post.authorKey] as? [String: Any],
             let author = Author(dictionary: authorDictionary),
             let timestampTimeInterval = dictionary[Post.timestampKey] as? TimeInterval,
-            let captionDictionaries = dictionary[Post.commentsKey] as? [[String: Any]] else { return nil }
+            let captionDictionaries = dictionary[Post.commentsKey] as? [[String: Any]],
+            let audioDictionaries = dictionary[Post.audioCommentsKey] as? [[String: Any]] else { return nil }
         
         self.mediaURL = mediaURL
         self.mediaType = mediaType
@@ -40,6 +42,7 @@ class Post {
         self.author = author
         self.timestamp = Date(timeIntervalSince1970: timestampTimeInterval)
         self.comments = captionDictionaries.compactMap({ Comment(dictionary: $0) })
+        self.audioComments = audioDictionaries.compactMap({ AudioComment(dictionary: $0) })
         self.id = id
     }
     
@@ -47,6 +50,7 @@ class Post {
         var dict: [String: Any] = [Post.mediaKey: mediaURL.absoluteString,
                 Post.mediaTypeKey: mediaType.rawValue,
                 Post.commentsKey: comments.map({ $0.dictionaryRepresentation }),
+                Post.audioCommentsKey: audioComments.map({ $0.dictionaryRepresentation }),
                 Post.authorKey: author.dictionaryRepresentation,
                 Post.timestampKey: timestamp.timeIntervalSince1970]
         
@@ -62,6 +66,7 @@ class Post {
     let author: Author
     let timestamp: Date
     var comments: [Comment]
+    var audioComments: [AudioComment]
     var id: String?
     var ratio: CGFloat?
     
@@ -74,6 +79,7 @@ class Post {
     static private let mediaTypeKey = "mediaType"
     static private let authorKey = "author"
     static private let commentsKey = "comments"
+    static private let audioCommentsKey = "audioComments"
     static private let timestampKey = "timestamp"
     static private let idKey = "id"
 }

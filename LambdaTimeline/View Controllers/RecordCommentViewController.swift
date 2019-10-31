@@ -10,6 +10,10 @@ import UIKit
 
 class RecordCommentViewController: UIViewController {
 
+    @IBOutlet weak var recordCommentButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var timeSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +32,12 @@ class RecordCommentViewController: UIViewController {
     */
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func recordButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
     }
     
 }

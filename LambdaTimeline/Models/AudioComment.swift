@@ -11,33 +11,34 @@ import FirebaseAuth
 
 class AudioComment: FirebaseConvertible, Equatable {
     
-    static private let audioKey = "audioKey"
+    static private let audioURLKey = "audioURLKey"
     static private let author = "author"
     static private let timestampKey = "timestamp"
     
-    let audio: Data
+    let audioURL: URL?
     let author: Author
     let timestamp: Date
     
-    init(audio: Data, author: Author, timestamp: Date = Date()) {
-        self.audio = audio
+    init(audioURL: URL? = nil, author: Author, timestamp: Date = Date()) {
+        self.audioURL = audioURL
         self.author = author
         self.timestamp = timestamp
     }
     
     init?(dictionary: [String: Any]) {
-        guard let audio = dictionary[AudioComment.audioKey] as? Data,
+        guard let audioURLString = dictionary[AudioComment.audioURLKey] as? String,
+            let audioURL = URL(string: audioURLString),
             let authorDictionary = dictionary[AudioComment.author] as? [String: Any],
             let author = Author(dictionary: authorDictionary),
             let timestampTimeInterval = dictionary[AudioComment.timestampKey] as? TimeInterval else { return nil}
         
-        self.audio = audio
+        self.audioURL = audioURL
         self.author = author
         self.timestamp = Date(timeIntervalSince1970: timestampTimeInterval)
     }
     
     var dictionaryRepresentation: [String : Any] {
-        return [AudioComment.audioKey: audio,
+        return [AudioComment.audioURLKey: audioURL,
                 AudioComment.author: author.dictionaryRepresentation,
                 AudioComment.timestampKey: timestamp.timeIntervalSince1970]
     }
