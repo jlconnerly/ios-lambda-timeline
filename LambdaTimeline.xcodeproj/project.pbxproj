@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321768EA236AA0BA00509E74 /* RecordCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321768E9236AA0BA00509E74 /* RecordCommentViewController.swift */; };
 		32C9EA272368EB3E001FF7DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */; };
 		32C9EA292369109F001FF7DA /* AddFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */; };
 		32C9EA2B23691895001FF7DA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C9EA2A23691895001FF7DA /* Notification+Extension.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321768E9236AA0BA00509E74 /* RecordCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCommentViewController.swift; sourceTree = "<group>"; };
 		32C9EA262368EB3E001FF7DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersViewController.swift; sourceTree = "<group>"; };
 		32C9EA2A23691895001FF7DA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				46CFE6F421707D0000E7FF73 /* ImagePostViewController.swift */,
 				46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */,
 				32C9EA282369109F001FF7DA /* AddFiltersViewController.swift */,
+				321768E9236AA0BA00509E74 /* RecordCommentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				46D571F32172D43B00E7FF73 /* Cache.swift in Sources */,
 				32C9EA2B23691895001FF7DA /* Notification+Extension.swift in Sources */,
 				46CFE7012171559500E7FF73 /* FetchMediaOperation.swift in Sources */,
+				321768EA236AA0BA00509E74 /* RecordCommentViewController.swift in Sources */,
 				46D571F82173FC2700E7FF73 /* ImagePostDetailTableViewController.swift in Sources */,
 				46CFE7032171572600E7FF73 /* ImagePostCollectionViewCell.swift in Sources */,
 				4646379C2170091A00E7FF73 /* PostController.swift in Sources */,
