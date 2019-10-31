@@ -41,7 +41,7 @@ class ImagePostDetailTableViewController: UITableViewController {
         
         let audioCommentAction = UIAlertAction(title: "Audio", style: .default) { (_) in
             DispatchQueue.main.async {
-                self.present(RecordCommentViewController(), animated: true, completion: nil)
+                self.performSegue(withIdentifier: "AddAudioSegue", sender: self)
             }
         }
         
