@@ -522,7 +522,68 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdL-Y3-4ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="472.71364317841085"/>
+            <point key="canvasLocation" x="1969" y="494"/>
+        </scene>
+        <!--Record Comment View Controller-->
+        <scene sceneID="0zy-Ci-Eja">
+            <objects>
+                <viewController id="gjZ-Ew-n4P" customClass="RecordCommentViewController" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IKO-xM-gPU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JST-Wa-WhT">
+                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-R5-wrk">
+                                        <rect key="frame" x="127" y="66" width="120" height="30"/>
+                                        <state key="normal" title="Record Comment"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-KY-gIz">
+                                        <rect key="frame" x="172" y="104" width="30" height="30"/>
+                                        <state key="normal" title="Play"/>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pke-9m-vjX">
+                                        <rect key="frame" x="6" y="151" width="363" height="31"/>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJH-a5-klx">
+                                        <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="0.0" green="0.039215686270000001" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ehf-KY-gIz" firstAttribute="top" secondItem="m8D-R5-wrk" secondAttribute="bottom" constant="8" id="0ND-Xh-o9V"/>
+                                    <constraint firstAttribute="trailing" secondItem="pke-9m-vjX" secondAttribute="trailing" constant="8" id="29e-Wp-T0b"/>
+                                    <constraint firstItem="pke-9m-vjX" firstAttribute="top" secondItem="Ehf-KY-gIz" secondAttribute="bottom" constant="17" id="6Sa-3E-77J"/>
+                                    <constraint firstAttribute="trailing" secondItem="m8D-R5-wrk" secondAttribute="trailing" constant="128" id="7DI-Df-Kis"/>
+                                    <constraint firstItem="pke-9m-vjX" firstAttribute="leading" secondItem="JST-Wa-WhT" secondAttribute="leading" constant="8" id="FKE-rc-AQH"/>
+                                    <constraint firstAttribute="width" constant="375" id="K3x-nN-Hib"/>
+                                    <constraint firstAttribute="height" constant="256" id="P71-e1-VhU"/>
+                                    <constraint firstItem="cJH-a5-klx" firstAttribute="top" secondItem="JST-Wa-WhT" secondAttribute="top" constant="8" id="PLj-pK-3me"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ehf-KY-gIz" secondAttribute="trailing" constant="173" id="PTp-Gv-YiZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJH-a5-klx" secondAttribute="trailing" constant="8" id="QAq-kb-zfb"/>
+                                    <constraint firstItem="m8D-R5-wrk" firstAttribute="leading" secondItem="JST-Wa-WhT" secondAttribute="leading" constant="127" id="cl9-Jq-4pZ"/>
+                                    <constraint firstItem="Ehf-KY-gIz" firstAttribute="leading" secondItem="JST-Wa-WhT" secondAttribute="leading" constant="172" id="dWo-vj-C27"/>
+                                    <constraint firstItem="m8D-R5-wrk" firstAttribute="top" secondItem="JST-Wa-WhT" secondAttribute="top" constant="66" id="dcl-nm-681"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JST-Wa-WhT" firstAttribute="trailing" secondItem="3gV-T8-FJE" secondAttribute="trailing" id="9KM-j7-WHN"/>
+                            <constraint firstItem="JST-Wa-WhT" firstAttribute="leading" secondItem="3gV-T8-FJE" secondAttribute="leading" id="L3D-Vq-bVY"/>
+                            <constraint firstItem="JST-Wa-WhT" firstAttribute="bottom" secondItem="3gV-T8-FJE" secondAttribute="bottom" id="lyc-Mp-Hpy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3gV-T8-FJE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5w6-E1-qne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2868" y="493.40329835082463"/>
         </scene>
     </scenes>
 </document>
