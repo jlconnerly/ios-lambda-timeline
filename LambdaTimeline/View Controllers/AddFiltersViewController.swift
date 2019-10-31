@@ -16,11 +16,14 @@ class AddFiltersViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var blurSlider: UISlider!
     @IBOutlet weak var sepiaSlider: UISlider!
+    @IBOutlet weak var twirlRadiusSlider: UISlider!
+    @IBOutlet weak var twirlAngleSlider: UISlider!
     
     private let context = CIContext(options: nil)
     
     private let blurFilter = CIFilter(name: "CIBoxBlur")!
     private let sepiaFilter = CIFilter(name: "CISepiaTone")!
+    private let twirlFilter = CIFilter(name: "CITwirlDistortion")!
     
     var image: UIImage?
     
@@ -60,16 +63,24 @@ class AddFiltersViewController: UIViewController {
         
         blurFilter.setValue(ciImage, forKey: "inputImage")
         blurFilter.setValue(blurSlider.value, forKey: "inputRadius")
-        
         guard let outputCIImageWithBlur = blurFilter.outputImage else { return nil }
         
         sepiaFilter.setValue(outputCIImageWithBlur, forKey: "inputImage")
         sepiaFilter.setValue(sepiaSlider.value, forKey: "inputIntensity")
-        
         guard let outputCIImageWithSepia = sepiaFilter.outputImage else { return nil }
         
+        twirlFilter.setValuesForKeys(["inputImage": outputCIImageWithSepia,
+                                       "inputCenter": CIVector(x: 150, y: 150),
+                                       "inputRadius": twirlRadiusSlider.value,
+                                       "inputAngle": twirlAngleSlider.value])
+        guard let outputCIImageWithTwirl = twirlFilter.outputImage else {
+            print("Failed adding twirl")
+            return nil
+        }
+        
+        
         // render the image
-        guard let outputCGImage = context.createCGImage(outputCIImageWithSepia, from: CGRect(origin: CGPoint.zero, size: image.size)) else { return nil }
+        guard let outputCGImage = context.createCGImage(outputCIImageWithTwirl, from: CGRect(origin: CGPoint.zero, size: image.size)) else { return nil }
         
         return UIImage(cgImage: outputCGImage)
     }
@@ -88,6 +99,12 @@ class AddFiltersViewController: UIViewController {
         updateImage()
     }
     
+    @IBAction func twirlRadiusDidChangeValue(_ sender: UISlider) {
+        updateImage()
+    }
+    @IBAction func twirlAngleDidChangeValue(_ sender: UISlider) {
+        updateImage()
+    }
     
     
     @IBAction func doneButtonTapped(_ sender: Any) {
